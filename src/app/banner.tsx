@@ -35,7 +35,6 @@ export default function Banner() {
   return (
     <div
       className={css({
-        mb: -20,
         p: {
           base: 12,
           sm: 24,

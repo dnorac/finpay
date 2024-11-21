@@ -7,9 +7,8 @@ const wrapper = css({
   py: [10, 20],
   rounded: "3xl",
   display: "flex",
-  alignItems: "center",
+  flexDir: "column",
   justifyContent: "space-between",
-  flexWrap: "wrap",
   gap: 8,
   //
   "& span": {
@@ -45,6 +44,7 @@ const wrapper = css({
     fontWeight: "medium",
     transition: "background 0.3s, border-color 0.3s",
     display: "inline-block",
+    textAlign: "center",
     _hover: {
       borderColor: "colorPalette.600",
     },
@@ -60,7 +60,10 @@ const wrapper = css({
   },
   "& .links": {
     display: "flex",
-    flexWrap: "wrap",
+    flexDirection: "column",
+    "@media (width > 470px)": {
+      flexDirection: "row",
+    },
     gap: 4,
   },
 });
