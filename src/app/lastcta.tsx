@@ -7,7 +7,7 @@ const wrapper = css({
   py: [10, 20],
   rounded: "3xl",
   display: "flex",
-  flexDir: "column",
+  flexWrap: "wrap",
   justifyContent: "space-between",
   gap: 8,
   //
@@ -31,7 +31,7 @@ const wrapper = css({
   },
   //
   "& .left": {
-    maxWidth: 600,
+    maxWidth: 480,
   },
   //
   "& a": {
@@ -59,6 +59,10 @@ const wrapper = css({
     },
   },
   "& .links": {
+    flex: "1 1 fit-content",
+    alignSelf: "center",
+    minW: "fit",
+    maxW: "max",
     display: "flex",
     flexDirection: "column",
     "@media (width > 470px)": {
