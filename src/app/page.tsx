@@ -14,12 +14,14 @@ export default function Home() {
       })}
     >
       <div
-        className={container({
-          roundedBottom: "100px",
+        className={css({
           bg: "colorPalette.50",
+          roundedBottom: "100px",
         })}
       >
-        <Banner />
+        <div className={container()}>
+          <Banner />
+        </div>
       </div>
       <StepSection />
       <div className={container()}>

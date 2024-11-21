@@ -1,5 +1,6 @@
 import { css } from "../../styled-system/css";
 import { Grid } from "../../styled-system/jsx";
+import { container } from "../../styled-system/patterns";
 
 const Card = () => (
   <div
@@ -59,13 +60,15 @@ export default function StepSection() {
         },
       })}
     >
-      <span>Step</span>
-      <h2>Maximize your returns with a Reserve account that generates.</h2>
-      <Grid columns={[1, 2, 3]} gap={8} mt={16}>
-        <Card />
-        <Card />
-        <Card />
-      </Grid>
+      <div className={container()}>
+        <span>Step</span>
+        <h2>Maximize your returns with a Reserve account that generates.</h2>
+        <Grid columns={[1, 2, 3]} gap={8} mt={16}>
+          <Card />
+          <Card />
+          <Card />
+        </Grid>
+      </div>
     </section>
   );
 }
