@@ -21,7 +21,6 @@ const wrapper = css({
   //
   "& h2": {
     fontSize: ["3xl", "5xl"],
-    fontWeight: "semibold",
     color: "white",
     lineHeight: "none",
     mt: 4,

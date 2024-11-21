@@ -1,9 +1,9 @@
-import { IBM_Plex_Sans } from "next/font/google";
+import localFont from "next/font/local";
 
-const font = IBM_Plex_Sans({
-  subsets: ["latin"],
-  display: "swap",
-  weight: "400",
+const font = localFont({ src: "./fonts/helveticanowdisplay-medium.ttf" });
+export const fontBold = localFont({
+  src: "./fonts/Helvetica-Bold.ttf",
+  variable: "--font-bold",
 });
 
 export default font;

@@ -11,6 +11,12 @@ const config: StorybookConfig = {
     name: "@storybook/nextjs",
     options: {},
   },
+  staticDirs: [
+    {
+      from: "../src/fonts",
+      to: "src/fonts",
+    },
+  ],
   webpackFinal: async (config) => {
     config.module = config.module || {};
     config.module.rules = config.module.rules || [];
