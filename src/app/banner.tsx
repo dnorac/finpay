@@ -57,18 +57,17 @@ export default function Banner() {
           mt: 4,
           display: "flex",
           flexWrap: "wrap",
-          justifyContent: "space-between",
           gap: 8,
         })}
       >
         <h1
           className={css({
             color: "colorPalette.950",
+            flex: "1 1 100%",
             fontSize: {
               base: "4xl",
               sm: "5xl",
             },
-            // fontWeight: "semibold",
             lineHeight: "none",
             maxW: 520,
           })}
@@ -77,7 +76,9 @@ export default function Banner() {
         </h1>
         <p
           className={css({
-            maxW: 333,
+            flex: "1 1 300px",
+            maxW: 400,
+            minW: [0, 300],
             color: "colorPalette.950/50",
           })}
         >
