@@ -17,7 +17,7 @@ const Card = ({
     <span className={css({ ml: -1, display: "inline-block" })}>
       <Icon width="60px" height="60px" />
     </span>
-    <h2 className={css({ fontSize: "2xl", fontWeight: "semibold", my: 2 })}>
+    <h2 className={css({ fontSize: "2xl", fontWeight: "medium", my: 2 })}>
       Free transfers
     </h2>
     <p
@@ -69,7 +69,7 @@ export default function Banner() {
               base: "4xl",
               sm: "5xl",
             },
-            fontWeight: "semibold",
+            // fontWeight: "semibold",
             lineHeight: "none",
             maxW: 520,
           })}
