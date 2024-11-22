@@ -2,8 +2,9 @@ import { css } from "../../styled-system/css";
 import { Grid } from "../../styled-system/jsx";
 import { container } from "../../styled-system/patterns";
 
-const Card = () => (
+const Card = ({ step }) => (
   <div
+    style={{ "--step": step } as React.CSSProperties}
     className={css({
       p: 8,
       rounded: "2xl",
@@ -20,6 +21,10 @@ const Card = () => (
       },
       _before: {
         content: "counter(step)",
+        animation: "fadein 1s",
+        animationDelay: "calc(1s * var(--step))",
+        animationFillMode: "forwards",
+        opacity: 0,
         fontSize: "8xl",
         lineHeight: 0.75,
         display: "inline-block",
@@ -64,9 +69,9 @@ export default function StepSection() {
         <span>Step</span>
         <h2>Maximize your returns with a Reserve account that generates.</h2>
         <Grid columns={[1, 2, 3]} gap={8} mt={16}>
-          <Card />
-          <Card />
-          <Card />
+          <Card step={1} />
+          <Card step={2} />
+          <Card step={3} />
         </Grid>
       </div>
     </section>

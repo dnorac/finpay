@@ -17,6 +17,12 @@ export default defineConfig({
   // Useful for theme customization
   theme: {
     extend: {
+      keyframes: {
+        fadein: {
+          "0%": { transform: "translateY(0)", opacity: 0 },
+          "100%": { transform: "translateY(20px)", opacity: 1 },
+        },
+      },
       tokens: {
         shadows: {
           primary: {
