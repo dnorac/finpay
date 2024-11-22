@@ -2,7 +2,7 @@ import { css } from "../../styled-system/css";
 import { Grid } from "../../styled-system/jsx";
 import { container } from "../../styled-system/patterns";
 
-const Card = ({ step }) => (
+const Card = ({ step }: { step: number }) => (
   <div
     style={{ "--step": step } as React.CSSProperties}
     className={css({
