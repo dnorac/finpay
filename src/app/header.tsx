@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { css, cva, cx } from "../../styled-system/css";
+import { css, cx } from "../../styled-system/css";
 import { styled } from "../../styled-system/jsx";
 import { container, hstack } from "../../styled-system/patterns";
+import { button } from "./button";
 
 const Logo = () => (
   <Link
@@ -14,37 +15,6 @@ const Logo = () => (
     Finpay
   </Link>
 );
-
-const button = cva({
-  base: {
-    px: 8,
-    py: 3,
-    rounded: "xl",
-    border: "1px solid transparent",
-    fontWeight: "medium",
-    transition: "background 0.3s, border-color 0.3s",
-  },
-  variants: {
-    variant: {
-      primary: {
-        bg: {
-          base: "colorPalette.700",
-          _hover: "colorPalette.800",
-        },
-        color: "white",
-      },
-      outline: {
-        bg: "transparent",
-        borderColor: {
-          base: "colorPalette.700/20",
-          _hover: "colorPalette.700/40",
-        },
-        color: "colorPalette.700",
-      },
-    },
-  },
-  defaultVariants: { variant: "primary" },
-});
 
 const navlinks = hstack({
   gap: [6, 6, 6, 12],

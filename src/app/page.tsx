@@ -1,6 +1,7 @@
 import { css } from "../../styled-system/css";
 import { container } from "../../styled-system/patterns";
 import Banner from "./banner";
+import FirstSection from "./first-section";
 import LastCTA from "./lastcta";
 import StepSection from "./stepsection";
 
@@ -17,11 +18,14 @@ export default function Home() {
         className={css({
           bg: "colorPalette.50",
           roundedBottom: "100px",
+          mb: -40,
+          pb: 28,
         })}
       >
-        <div className={container()}>
-          <Banner />
-        </div>
+        <FirstSection />
+      </div>
+      <div className={container({ mb: 24 })}>
+        <Banner />
       </div>
       <StepSection />
       <div className={container()}>

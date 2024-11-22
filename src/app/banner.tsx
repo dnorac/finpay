@@ -36,7 +36,7 @@ export default function Banner() {
     <div
       className={css({
         p: {
-          base: 12,
+          base: 8,
           sm: 24,
         },
         rounded: "2xl",
