@@ -45,10 +45,19 @@ const wrapper = css({
     borderColor: "colorPalette.800",
     fontWeight: "medium",
     transition: "background 0.3s, border-color 0.3s",
-    display: "inline-block",
     textAlign: "center",
+    "& svg": {
+      display: "inline-block",
+      m: -2,
+      mb: -1.5,
+      ml: 2,
+      transition: "all .3s",
+    },
     _hover: {
       borderColor: "colorPalette.600",
+      "& svg": {
+        color: "colorPalette.400",
+      },
     },
     //
     "&.primary": {
@@ -86,7 +95,24 @@ export default function LastCTA() {
         <a href="/signup" className="primary">
           Get Started Now
         </a>
-        <a href="/products">Learn More</a>
+        <a href="/products">
+          Learn More{" "}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M7 7h10v10M7 17L17 7"
+            />
+          </svg>
+        </a>
       </div>
       {/*  */}
     </div>
