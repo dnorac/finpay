@@ -58,6 +58,7 @@ export default function Banner() {
           mt: 4,
           display: "flex",
           flexWrap: "wrap",
+          justifyContent: "space-between",
           gap: 8,
         })}
       >
@@ -82,7 +83,9 @@ export default function Banner() {
             maxW: 400,
             minW: [0, 300],
             color: "colorPalette.950/50",
-            mt: 2
+            fontSize: "lg",
+            mt: 2,
+            textWrap: "pretty",
           })}
         >
           Design a financial operating system that works for your business and
