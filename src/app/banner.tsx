@@ -46,8 +46,9 @@ export default function Banner() {
     >
       <div
         className={css({
-          color: "colorPalette.500",
+          color: "colorPalette.600",
           textTransform: "uppercase",
+          fontSize: "sm",
         })}
       >
         Future Payment
@@ -70,6 +71,7 @@ export default function Banner() {
             },
             lineHeight: "none",
             maxW: 520,
+            textWrap: "pretty",
           })}
         >
           Experience that grows with your scale.
