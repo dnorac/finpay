@@ -82,6 +82,7 @@ export default function Banner() {
             maxW: 400,
             minW: [0, 300],
             color: "colorPalette.950/50",
+            mt: 2
           })}
         >
           Design a financial operating system that works for your business and
