@@ -60,7 +60,7 @@ export default function PaymentUI() {
           />
         </svg>
         Credit Card
-        <input type="radio" name="method" id="credit-card" checked />
+        <input type="radio" name="method" id="credit-card" checked readOnly />
       </label>
       <label htmlFor="bank-account">
         <svg
