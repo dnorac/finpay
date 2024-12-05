@@ -1,5 +1,5 @@
 import IconDipa from "@/icons/dipa.svg";
-import { css } from "../../styled-system/css";
+import { css, cx } from "../../styled-system/css";
 import { button } from "./button";
 
 export default function PaymentUI() {
@@ -78,7 +78,16 @@ export default function PaymentUI() {
         <input type="radio" name="method" id="bank-account" />
       </label>
 
-      <button className={button()}>Pay</button>
+      <button
+        className={cx(
+          button(),
+          css({
+            transform: "translateZ(80px) translateY(-13px) translateX(-35px) scale(0.9)",
+          })
+        )}
+      >
+        Pay
+      </button>
     </div>
   );
 }
@@ -90,6 +99,7 @@ const wrapper = css({
   display: "grid",
   gap: 4,
   bg: "white",
+  transformStyle: "preserve-3d",
   "& label": {
     display: "flex",
     gap: 2,
@@ -99,7 +109,9 @@ const wrapper = css({
     borderColor: "colorPalette.500/20",
     rounded: "xl",
     fontSize: "sm",
-    "&:has(input:checked)": {
+    cursor: "pointer",
+    transition: "border-color 0.3s",
+    "&:has(input:checked), &:hover": {
       borderColor: "colorPalette.600",
     },
     "& input": {
@@ -114,6 +126,7 @@ const invoice = css({
   border: "1px solid",
   borderColor: "colorPalette.500/20",
   color: "colorPalette.950/60",
+  transformStyle: "preserve-3d",
 
   "& h4": {
     fontSize: "sm",
@@ -123,6 +136,7 @@ const invoice = css({
     fontSize: "3xl",
     fontWeight: "bold",
     color: "colorPalette.950",
+    transform: "translateZ(80px) translateX(-35px) translateY(5px) scale(0.9)",
   },
 
   "& span": {

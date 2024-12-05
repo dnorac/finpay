@@ -16,6 +16,11 @@ export default function FirstSection() {
           w: "100%",
           maxW: 400,
           display: ["none", "block"],
+          transformStyle: "preserve-3d",
+          transition: "transform .3s",
+          _hover: {
+            transform: "rotateY(-25deg)",
+          },
         })}
       >
         <PaymentUI />
@@ -24,6 +29,8 @@ export default function FirstSection() {
             position: "absolute",
             top: "-5%",
             right: "-20px",
+            transition: "transform .3s",
+            transform: "translateZ(40px) translateX(-20px) scale(0.9)",
           })}
         >
           <WeirdCard />
@@ -41,4 +48,5 @@ const wrapper = container({
   alignItems: "center",
   rowGap: 8,
   py: 14,
+  perspective: "800px",
 });
