@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "prepare": "panda codegen",
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "dev:sb": "storybook dev -p 6006 --no-open",
     "start": "next start",
     "lint": "next lint",
@@ -13,10 +13,10 @@
   },
   "dependencies": {
     "clsx": "^2.1.1",
-    "motion": "^11.13.1",
-    "next": "14.2.18",
-    "react": "^18",
-    "react-dom": "^18",
+    "motion": "12.0.0-alpha.2",
+    "next": "15.0.3",
+    "react": "19.0.0-rc-66855b96-20241106",
+    "react-dom": "19.0.0-rc-66855b96-20241106",
     "tailwind-merge": "^2.5.4"
   },
   "devDependencies": {
@@ -31,13 +31,19 @@
     "@storybook/test": "8.4.5",
     "@svgr/webpack": "^8.1.0",
     "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@types/react": "npm:types-react@19.0.0-rc.1",
+    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
     "eslint": "^8",
-    "eslint-config-next": "14.2.18",
+    "eslint-config-next": "15.0.3",
     "eslint-plugin-storybook": "^0.11.1",
     "postcss": "^8.4.49",
     "storybook": "8.4.5",
     "typescript": "^5"
+  },
+  "pnpm": {
+    "overrides": {
+      "@types/react": "npm:types-react@19.0.0-rc.1",
+      "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
+    }
   }
 }
