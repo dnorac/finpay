@@ -3,33 +3,7 @@ import IconShield from "@/icons/shield.svg";
 import IconTransfers from "@/icons/transfers.svg";
 import { css } from "../../styled-system/css";
 import { Wrap } from "../../styled-system/jsx";
-
-const Card = ({
-  icon: Icon,
-}: {
-  icon: React.FC<React.SVGProps<SVGSVGElement>>;
-}) => (
-  <div
-    className={css({
-      flex: "1 1 200px",
-    })}
-  >
-    <span className={css({ ml: -1, display: "inline-block" })}>
-      <Icon width="60px" height="60px" />
-    </span>
-    <h2 className={css({ fontSize: "2xl", fontWeight: "medium", my: 2 })}>
-      Free transfers
-    </h2>
-    <p
-      className={css({
-        color: "colorPalette.900/70",
-      })}
-    >
-      Create a financial experience and automate repeat purchases by scheduling
-      recurring payments.
-    </p>
-  </div>
-);
+import BannerCard from "./banner-card";
 
 export default function Banner() {
   return (
@@ -93,9 +67,9 @@ export default function Banner() {
         </p>
       </div>
       <Wrap mt="20" gap="20">
-        <Card icon={IconTransfers} />
-        <Card icon={IconBank} />
-        <Card icon={IconShield} />
+        <BannerCard icon={IconTransfers} />
+        <BannerCard icon={IconBank} />
+        <BannerCard icon={IconShield} />
       </Wrap>
     </div>
   );
