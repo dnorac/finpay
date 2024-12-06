@@ -1,4 +1,4 @@
-import { css } from "../../styled-system/css";
+import { css, cx } from "../../styled-system/css";
 import { container } from "../../styled-system/patterns";
 
 import FirstCTA from "./first-cta";
@@ -11,18 +11,21 @@ export default function FirstSection() {
       {/*  */}
       <FirstCTA />
       <div
-        className={css({
-          position: "relative",
-          flex: "0 0 auto",
-          w: "100%",
-          maxW: 400,
-          display: ["none", "block"],
-          transformStyle: "preserve-3d",
-          transition: "transform .3s",
-          _hover: {
-            transform: "rotateY(-25deg)",
-          },
-        })}
+        className={cx(
+          css({
+            position: "relative",
+            flex: "0 0 auto",
+            w: "100%",
+            maxW: 400,
+            display: ["none", "block"],
+            transformStyle: "preserve-3d",
+            transition: "transform .3s",
+            _hover: {
+              transform: "rotateY(-25deg)",
+            },
+          }),
+          "transform-container"
+        )}
       >
         <PaymentUI />
         <div
@@ -31,7 +34,9 @@ export default function FirstSection() {
             top: "-5%",
             right: "-20px",
             transition: "transform .3s",
-            transform: "translateZ(40px) translateX(-20px) scale(0.9)",
+            ".transform-container:hover > &": {
+              transform: "translateZ(40px)",
+            },
           })}
         >
           <WeirdCard />

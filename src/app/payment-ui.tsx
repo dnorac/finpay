@@ -1,8 +1,15 @@
+"use client";
+
 import IconDipa from "@/icons/dipa.svg";
+import { useState } from "react";
 import { css, cx } from "../../styled-system/css";
 import { button } from "./button";
 
 export default function PaymentUI() {
+  const [paymentMethod, setPaymentMethod] = useState<
+    "credit-card" | "bank-account"
+  >("credit-card");
+
   return (
     <div className={wrapper}>
       {/*  */}
@@ -60,7 +67,13 @@ export default function PaymentUI() {
           />
         </svg>
         Credit Card
-        <input type="radio" name="method" id="credit-card" checked readOnly />
+        <input
+          type="radio"
+          name="payment-method"
+          id="credit-card"
+          checked={paymentMethod == "credit-card"}
+          onChange={() => setPaymentMethod("credit-card")}
+        />
       </label>
       <label htmlFor="bank-account">
         <svg
@@ -75,14 +88,23 @@ export default function PaymentUI() {
           />
         </svg>
         Bank Account
-        <input type="radio" name="method" id="bank-account" />
+        <input
+          type="radio"
+          name="payment-method"
+          id="bank-account"
+          checked={paymentMethod == "bank-account"}
+          onChange={() => setPaymentMethod("bank-account")}
+        />
       </label>
 
       <button
         className={cx(
           button(),
           css({
-            transform: "translateZ(80px) translateY(-13px) translateX(-35px) scale(0.9)",
+            transition: "transform .3s",
+            ".transform-container:hover &": {
+              transform: "translateZ(80px)",
+            },
           })
         )}
       >
@@ -111,11 +133,29 @@ const wrapper = css({
     fontSize: "sm",
     cursor: "pointer",
     transition: "border-color 0.3s",
-    "&:has(input:checked), &:hover": {
+    pos: 'relative',
+    "&:has(input:checked)": {
       borderColor: "colorPalette.600",
+      _before: {
+        order: 1,
+        content: '""',
+        w: 5,
+        h: 5,
+        rounded: "full",
+        bgColor: "colorPalette.100",
+      },
+      _after: {
+        pos: 'absolute',
+        right: 4,
+        content: '"✔"',
+        fontSize: 'lg',
+        transform: 'translate(-2px)',
+        color: 'colorPalette.800'
+      },
     },
     "& input": {
       ml: "auto",
+      opacity: 0,
     },
   },
 });
@@ -136,7 +176,10 @@ const invoice = css({
     fontSize: "3xl",
     fontWeight: "bold",
     color: "colorPalette.950",
-    transform: "translateZ(80px) translateX(-35px) translateY(5px) scale(0.9)",
+    transition: "transform .3s",
+    ".transform-container:hover &": {
+      transform: "translateZ(80px)",
+    },
   },
 
   "& span": {
